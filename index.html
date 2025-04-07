@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="right-div"> 
+      <img src="illustration-empty.svg" alt="calculator">
+      <h1>Result shown here</h1>
+      <p>complete the form anc click "calculate repayement" to
+         see what your monthly repayement would be.</p>
+    </div>
+    <div class="left-div">
+      <div class="first">
+        <h3>Mortgage calculator</h3>
+        <a href="$" id="clear">clear all</a>
+      </div>
+      <div class="second">
+        <label for="">Mortgage amount</label>
+        <div class="second-child">
+          <select class="dollar" name="" id="">
+            <option value="">$</option>
+            <option value="">£</option>
+            <option value="">€</option>
+          </select>
+          <input type="number" >
+        </div>
+      </div>
+      <div class="third">
+        <div>
+          <label for="">Mortgage term</label>
+          <div class="third-child">
+             <input type="number" id="termValue">
+             <select name="" id="termType">
+              <option value="years">years</option>
+              <option value="month">month</option>
+             </select>
+          </div>
+        </div>
+        <div>
+          <label for="">interest rate </label>
+          <div class="third-child2">
+            <input type="number" id="dependentInput">
+            <span>%</span>
+          </div>
+        </div>
+      </div>
+      <div class="forth">
+        <label>Mortgage type</label><br>
+        <div>
+          <input class="check" type="radio" value="repayement" name="check" >
+          <label for="repayement-box">repayement</label> <br>
+        </div>
+        <div>
+          <input class="check" type="radio" value="interest only" name="check" >
+          <label for="interest-box">interest only</label> <br>
+        </div>
+      </div>
+      <button>
+        <img class="icon" src="icon-calculator.svg" alt="calculator">
+         <p style="color: black;">calculate repayement</p>
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
