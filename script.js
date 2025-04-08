@@ -13,12 +13,31 @@ if (termType.value === 'years'){
 });
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const clearLink = document.getElementById('clear');
-    clearLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelectorAll("input[type='number']").forEach(input => {
-        input.value = "";
-      });
-    });
-  });
+
+document.getElementById("button").addEventListener("click", function () {
+
+  const amount = parseFloat(document.getElementById("amount1").value);
+  const termValue = parseFloat(document.getElementById("termValue").value);
+  const termType = document.getElementById("termType").value;
+  const interestRate = parseFloat(document.getElementById("dependentInput").value);
+  const type = document.querySelector("input[name='check']:checked")?.value;
+
+  if (isNaN(amount) || isNaN(termValue) || isNaN(interestRate) || !type) {
+    alert("complet all the field");
+    return;
+  }
+
+  const totalMonths = termType === "years" ? termValue * 12 : termValue;
+
+  const monthlyRate = interestRate / 100 / 12;
+
+  let result = 0;
+
+  if (type === "repayement") {
+    result = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -totalMonths));
+  } else if (type === "interest only") {
+    result = amount * monthlyRate;
+  }
+
+  document.getElementById("p-1").textContent = `Monthly repayment: ${result.toFixed(2)}`;
+});
